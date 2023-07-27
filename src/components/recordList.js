@@ -23,7 +23,7 @@ export default function RecordList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     await fetch(`http://localhost:5050/record/`)
+     await fetch(`${process.env.REACT_APP_SERVER_URL}/record/`)
      .then((res) => {
         if(!res.ok) {
             const message = `An error occurred: ${res.statusText}`;
@@ -47,7 +47,7 @@ export default function RecordList() {
  
  // This method will delete a record
  async function deleteRecord(id) {
-   await fetch(`http://localhost:5050/record/${id}`, {
+   await fetch(`${process.env.REACT_APP_SERVER_URL}/record/${id}`, {
      method: "DELETE"
    });
  
