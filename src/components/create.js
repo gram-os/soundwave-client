@@ -22,7 +22,7 @@ export default function Create() {
 
         const newPerson = { ...form }
 
-        await fetch(`http://localhost:5050/record/`, {
+        await fetch(`${process.env.REACT_APP_SERVER_URL}/record/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
